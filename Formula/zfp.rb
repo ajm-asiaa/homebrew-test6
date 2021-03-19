@@ -14,6 +14,6 @@ class Zfp < Formula
   end
 
   test do
-    assert_true File.exist?("/usr/local/Cellar/zfp/0.5.5/lib/libzfp.0.5.5.dylib")
+    assert File.directory?("/usr/local/Cellar/zfp/0.5.5/lib")
   end
 end
