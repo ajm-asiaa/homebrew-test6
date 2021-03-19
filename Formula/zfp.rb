@@ -9,11 +9,11 @@ class Zfp < Formula
     mkdir "build" do
       system "cmake", "..", "-DBUILD_EXAMPLES=OFF",
                             "-DZFP_WITH_OPENMP=OFF", *std_cmake_args
-      system "make", "install"
+      system "make", "install", "PREFIX=#{prefix}/"
     end
   end
 
   test do
-    assert File.directory?("#{lib}")
+    assert_match "zfp version 0.5.5 (May 5, 2019)", shell_output("#{bin}/zfp").first
   end
 end
