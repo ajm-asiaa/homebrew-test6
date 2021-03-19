@@ -14,6 +14,6 @@ class Zfp < Formula
   end
 
   test do
-    assert_predicate "#{lib}/libzfp.0.5.5.dylib", :exist?
+    assert_predicate "/usr/local/Cellar/zfp/0.5.5/lib/libzfp.0.5.5.dylib", :exist?
   end
 end
