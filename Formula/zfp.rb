@@ -14,6 +14,6 @@ class Zfp < Formula
   end
 
   test do
-    assert File.directory?("#{prefix}/lib")
+    assert File.directory?("#{lib}")
   end
 end
