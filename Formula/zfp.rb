@@ -14,6 +14,6 @@ class Zfp < Formula
   end
 
   test do
-    assert_true File.exist?(include/"zfpheader.h")
+    assert_true Dir.exist?(lib)
   end
 end
