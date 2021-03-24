@@ -11,11 +11,10 @@ class CartaFrontend < Formula
   depends_on "node"
 
   def install
-    system "npm", "install", "carta-frontend", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    system "npm", "install", "carta-frontend@2.0.0-dev.21.3.05b", *Language::Node.std_npm_install_args(libexec)
   end
 
   test do
-    assert_true Dir.exist?(share)
+    assert_true Dir.exist?(prefix)
   end
 end
