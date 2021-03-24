@@ -16,12 +16,24 @@ class CartaCasacore < Formula
   depends_on "openblas" # for linux
   depends_on "wcslib"
 
+  resource "casadata" do
+    url "http://alma.asiaa.sinica.edu.tw/_downloads/measures_data.tar.gz"
+    sha256 "dbac1700fe6f35d26427238e9256c895eb9cbf3684ad9c6ebb70be1dd005bddc"
+  end
+
   def install
-    mkdir_p "#{share}/casacore/data"
-    system "svn co https://svn.cv.nrao.edu/svn/casa-data/distro/ephemerides/"
-    system "svn co https://svn.cv.nrao.edu/svn/casa-data/distro/geodetic/"
-    cp_r buildpath/"ephemerides", share/"casacore/data"
-    cp_r buildpath/"geodetic", share/"casacore/data"
+    # Problems with svn at the moment?!?
+    # mkdir_p "#{share}/casacore/data"
+    # system "svn co https://svn.cv.nrao.edu/svn/casa-data/distro/ephemerides/"
+    # system "svn co https://svn.cv.nrao.edu/svn/casa-data/distro/geodetic/"
+    # cp_r buildpath/"ephemerides", share/"casacore/data"
+    # cp_r buildpath/"geodetic", share/"casacore/data"
+    # So temporarily use a tar.gz at ASIAA 
+    resource("casadata").stage do
+      mkdir_p "#{share}/casacore/data"
+      cp_r "ephemerides", share/"casacore/data"
+      cp_r "geodetic", share/"casacore/data"
+    end
 
     ENV["FCFLAGS"] = "-w -fallow-argument-mismatch -O2"
     ENV["FFLAGS"] = "-w -fallow-argument-mismatch -O2"
