@@ -10,7 +10,8 @@ class CartaFrontend < Formula
 
   def install
     mkdir_p "#{share}/carta" do
-    system "cp", "-r", "#{prefix}/carta/frontend", "#{share}/carta/frontend"
+      system "cp", "-r", "#{prefix}/carta/frontend", "#{share}/carta/frontend"
+    end
   end
 
   test do
