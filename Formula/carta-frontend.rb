@@ -9,8 +9,7 @@ class CartaFrontend < Formula
   depends_on "go" => :build
 
   def install
-    mkdir_p "#{share}/carta"
-    mv prefix/"frontend", share/"carta/"
+    mv prefix, share
   end
 
   test do
