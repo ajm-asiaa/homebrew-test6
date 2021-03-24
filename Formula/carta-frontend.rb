@@ -16,6 +16,6 @@ class CartaFrontend < Formula
   end
 
   test do
-    assert_true Dir.exist?(share/frontend)
+    assert_true Dir.exist?(share)
   end
 end
