@@ -7,7 +7,6 @@ class CartaBeta < Formula
 
   depends_on "cmake" => :build
   depends_on "cartavis/tap/carta-casacore"
-  depends_on "cartavis/tap/carta-frontend"
   depends_on "cartavis/tap/zfp"
   depends_on "curl"
   depends_on "fmt"
@@ -47,5 +46,6 @@ class CartaBeta < Formula
 
   test do
     assert_match "2.0.0-dev.21.03.04", shell_output("#{bin}/carta_backend --version")
+    assert_true Dir.exist?(share/"carta/frontend")
   end
 end
