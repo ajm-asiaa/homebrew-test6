@@ -2,7 +2,7 @@ require "language/node"
 
 class CartaFrontend < Formula
   desc "The frontend interface for CARTA"
-  homepage "github.com/CARTAvis/carta-frontend"
+  homepage "https://github.com/CARTAvis/carta-frontend"
   url "https://github.com/CARTAvis/carta-frontend/archive/refs/tags/v2.0.0-dev.21.01.22.tar.gz"
   version "2.0.0"
   sha256 "052f3e1bb5c7fdf185964a24255237732b0a5a5cb0f78f469dadb9e12dfd4783"
