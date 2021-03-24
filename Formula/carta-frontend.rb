@@ -10,7 +10,7 @@ class CartaFrontend < Formula
 
   def install
     mkdir_p "#{share}/carta/frontend"
-    mv buildpath, share/"carta/frontend"
+    cp_r buildpath/".", share/"carta/frontend"
   end
 
   test do
