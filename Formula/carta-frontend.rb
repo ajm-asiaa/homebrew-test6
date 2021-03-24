@@ -9,7 +9,7 @@ class CartaFrontend < Formula
   depends_on "go" => :build
 
   def install
-    mv buildpath/"carta", share
+    mv buildpath, share
   end
 
   test do
