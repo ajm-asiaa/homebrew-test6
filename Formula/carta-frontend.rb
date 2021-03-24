@@ -1,7 +1,7 @@
 require "language/node"
 
 class CartaFrontend < Formula
-  desc "The frontend interface for CARTA"
+  desc "Frontend interface for CARTA"
   homepage "https://github.com/CARTAvis/carta-frontend"
   url "https://github.com/CARTAvis/carta-frontend/archive/refs/tags/v2.0.0-dev.21.01.22.tar.gz"
   version "2.0.0"
@@ -11,7 +11,6 @@ class CartaFrontend < Formula
   depends_on "node"
 
   def install
-    # ENV.deparallelize  # if your formula fails when building in parallel
     system "npm", "install", "carta-frontend", *Language::Node.std_npm_install_args(libexec)
     bin.install_symlink Dir["#{libexec}/bin/*"]
   end
