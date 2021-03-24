@@ -29,7 +29,7 @@ class CartaBeta < Formula
 
     path = HOMEBREW_PREFIX/"Cellar/carta-casacore/3.0.0/include"
 
-    mkdir "build" do
+    mkdir "build-backend" do
       system "cmake", "..", "-DCMAKE_PREFIX_PATH=#{lib}",
                             "-DCMAKE_INCLUDE_PATH=#{include}",
                             "-DCMAKE_CXX_FLAGS=-I#{path}/casacode -I#{path}/casacore",
@@ -40,16 +40,7 @@ class CartaBeta < Formula
     # Grabing the pre-built carta-frontend from the npm repository.
     resource("frontend").stage do
       mkdir_p "#{share}/carta/frontend"
-      cp_r buildpath/"build/zfp_wrapper.wasm", share/"carta/frontend"
-      cp_r buildpath/"build/robots.txt", share/"carta/frontend"
-      cp_r buildpath/"build/manifest.json", share/"carta/frontend"
-      cp_r buildpath/"build/index.html", share/"carta/frontend"
-      cp_r buildpath/"build/gsl_wrapper.wasm", share/"carta/frontend"
-      cp_r buildpath/"build/carta_icon_128px.png", share/"carta/frontend"
-      cp_r buildpath/"build/carta_computation.wasm", share/"carta/frontend"
-      cp_r buildpath/"build/ast_wrapper.wasm", share/"carta/frontend"
-      cp_r buildpath/"build/asset-manifest.json", share/"carta/frontend"
-      cp_r buildpath/"build/static", share/"carta/frontend"
+      cp_r "build/.", share/"carta/frontend"
     end
   end
 
