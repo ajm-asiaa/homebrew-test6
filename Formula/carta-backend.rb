@@ -7,9 +7,9 @@ class CartaBackend < Formula
   license "GPL-3.0-only"
 
   bottle do
-    root_url "https://github.com/CARTAvis/homebrew-tap/releases/download/carta-backend-2.0.0"
-    sha256 cellar: :any,                 catalina:     "a78452365ace9930247bbcfc645e8af3f8c07e1b1c68dfc3b408164b16f72869"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "c57f840313c726c2949a58602e206010e0147ea70e3951aa0c3b5e4818a96ca3"
+    root_url "https://github.com/ajm-asiaa/homebrew-test6/releases/download/carta-backend-2.0.0"
+    sha256 cellar: :any,                 catalina:     "de51db32631357d76813b8c699dfb7b582a5a5f215d9e2b4b5dc84c3469be732"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "08b44439366f17367d4b90fdd26d5a6dc0da6850c6cbf8c374e04b2ac4cbbca2"
   end
 
   depends_on "cmake" => :build
