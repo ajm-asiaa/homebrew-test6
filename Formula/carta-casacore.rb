@@ -6,6 +6,12 @@ class CartaCasacore < Formula
   sha256 "d43a430e712ad45679cd7caed5cac94fb6f6bed3063f82c8b2afd74f932ec918"
   license "GPL-2.0-only"
 
+  bottle do
+    root_url "https://github.com/ajm-asiaa/homebrew-test6/releases/download/carta-casacore-3.0.0"
+    sha256 catalina:     "7c35f7d8df08c72c30ea9807de662a9725dee6cf34a2096989187c72cdb5639e"
+    sha256 x86_64_linux: "20c5c8b692c88e854e6a793bf5515f91e4b2a292a87a2b505a463bba546ef397"
+  end
+
   depends_on "cmake" => :build
   depends_on "cfitsio"
   depends_on "fftw"
