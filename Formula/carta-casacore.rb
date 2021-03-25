@@ -5,9 +5,9 @@ class CartaCasacore < Formula
   license "GPL-2.0-only"
 
   bottle do
-    root_url "https://github.com/ajm-asiaa/homebrew-test6/releases/download/carta-casacore-3.0.0"
-    sha256 catalina:     "7c35f7d8df08c72c30ea9807de662a9725dee6cf34a2096989187c72cdb5639e"
-    sha256 x86_64_linux: "20c5c8b692c88e854e6a793bf5515f91e4b2a292a87a2b505a463bba546ef397"
+    root_url "https://github.com/ajm-asiaa/homebrew-test6/releases/download/carta-casacore-2021.2.4"
+    sha256 catalina:     "02c26187c59a90dc8618f58f42eab9533d497d5ce566ef81273ad934eea0dd19"
+    sha256 x86_64_linux: "4c7d382efb0933fcbd3632cb01887e2287cae732cb17b6eedf1f740021e7be93"
   end
 
   depends_on "cmake" => :build
