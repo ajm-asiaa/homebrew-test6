@@ -1,15 +1,9 @@
 class CartaBeta < Formula
   desc "Carta-backend and carta-frontend components of CARTA"
   homepage "https://cartavis.github.io/"
-  url "http://alma.asiaa.sinica.edu.tw/_downloads/carta-backend-v2.0.0-dev.21.03.05.tgz"
-  sha256 "51eb71cf6a92720d7263398e48586fadf93901fb1f436b0d0775a22766ccd086"
+  url "https://github.com/CARTAvis/carta-backend/archive/refs/tags/v2.0.0-dev.21.03.05.tar.gz"
+  sha256 "2aad00bb92dca00be6a03db54ac2558fe8ac80b0da36f4316a428e5fe98d044a"
   license "GPL-3.0-only"
-
-  bottle do
-    root_url "https://github.com/ajm-asiaa/homebrew-test6/releases/download/carta-beta-21.03.05"
-    sha256 cellar: :any,                 catalina:     "c4e686200509b6c4a66cd3ee51c9f47ba93f0e7b8dd642006e290c2ade437073"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "bf7c55175d7310da84163c28b688d67f5a30caf8c98cc7f8e037a0313a1ec5cb"
-  end
 
   depends_on "cmake" => :build
   depends_on "cartavis/tap/carta-casacore"
@@ -31,10 +25,9 @@ class CartaBeta < Formula
 
   def install
     # Building the carta-backend
+    system "git", "submodule", "update", "--force", "--recursive", "--init", "--remote"
     ENV["OPENSSL_ROOT_DIR"] = "$(brew --prefix openssl)"
-
     path = HOMEBREW_PREFIX/"Cellar/carta-casacore/3.0.0/include"
-
     mkdir "build-backend" do
       system "cmake", "..", "-DCMAKE_PREFIX_PATH=#{lib}",
                             "-DCMAKE_INCLUDE_PATH=#{include}",
