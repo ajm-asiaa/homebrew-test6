@@ -43,9 +43,9 @@ class CartaCasacore < Formula
     ENV["FFLAGS"] = "-w -fallow-argument-mismatch -O2"
 
     system "git", "submodule", "init"
-    system "git", "submodule", "update"    
+    system "git", "submodule", "update"
 
-    chdir "casa6" do    
+    chdir "casa6" do
       system "git", "submodule", "init"
       system "git", "submodule", "update"
     end
