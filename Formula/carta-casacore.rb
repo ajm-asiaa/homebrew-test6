@@ -1,9 +1,7 @@
 class CartaCasacore < Formula
   desc "This is carta-casacore used by CARTA"
   homepage "https://github.com/CARTAvis/carta-casacore"
-  url "http://alma.asiaa.sinica.edu.tw/_downloads/carta-casacore.tar.gz"
-  version "3.0.0"
-  sha256 "d43a430e712ad45679cd7caed5cac94fb6f6bed3063f82c8b2afd74f932ec918"
+  url: "https://github.com/CARTAvis/carta-casacore.git", tag: "3.4.0+5.8.0+2021.2.4"
   license "GPL-2.0-only"
 
   bottle do
@@ -43,6 +41,15 @@ class CartaCasacore < Formula
 
     ENV["FCFLAGS"] = "-w -fallow-argument-mismatch -O2"
     ENV["FFLAGS"] = "-w -fallow-argument-mismatch -O2"
+
+    system "git", "submodule", "init"
+    system "git", "submodule", "update"    
+
+    chdir "casa6" do    
+      system "git", "submodule", "init"
+      system "git", "submodule", "update"
+    end
+
     mkdir "build" do
       system "cmake", "..", "-DUSE_FFTW3=ON",
                             "-DUSE_HDF5=ON",
