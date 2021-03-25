@@ -1,8 +1,7 @@
 class CartaBeta < Formula
   desc "Carta-backend and carta-frontend components of CARTA"
   homepage "https://cartavis.github.io/"
-  url "https://github.com/CARTAvis/carta-backend/archive/refs/tags/v2.0.0-dev.21.03.05.tar.gz"
-  sha256 "2aad00bb92dca00be6a03db54ac2558fe8ac80b0da36f4316a428e5fe98d044a"
+  url "https://github.com/CARTAvis/carta-backend.git", :using => :git, :tag => "v2.0.0-dev.21.03.05"
   license "GPL-3.0-only"
 
   depends_on "cmake" => :build
@@ -25,7 +24,7 @@ class CartaBeta < Formula
 
   def install
     # Building the carta-backend
-    system "git", "submodule", "update", "--force", "--recursive", "--init", "--remote"
+    system "git", "submodule", "update", "--recursive", "--init"
     ENV["OPENSSL_ROOT_DIR"] = "$(brew --prefix openssl)"
     path = HOMEBREW_PREFIX/"Cellar/carta-casacore/3.0.0/include"
     mkdir "build-backend" do
