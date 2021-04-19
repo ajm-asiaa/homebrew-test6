@@ -27,6 +27,7 @@ class CartaCasacore < Formula
     # cp_r buildpath/"ephemerides", share/"casacore/data"
     # cp_r buildpath/"geodetic", share/"casacore/data"
     # So temporarily use a tar.gz at ASIAA
+
     resource("casadata").stage do
       mkdir_p "#{share}/casacore/data"
       cp_r "ephemerides", share/"casacore/data"
