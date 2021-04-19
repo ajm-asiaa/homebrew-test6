@@ -59,7 +59,8 @@ class CartaCasacore < Formula
                             "-DBUILD_TESTING=OFF",
                             "-DBUILD_PYTHON=OFF",
                             "-DUseCcache=1",
-                            "-DHAS_CXX11=1", *std_cmake_args
+                            "-DHAS_CXX11=1",
+                            "-DCMAKE_INSTALL_PREFIX=/opt/carta-casacore", *std_cmake_args
       system "make", "install"
     end
   end
